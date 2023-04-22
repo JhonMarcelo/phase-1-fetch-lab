@@ -1,7 +1,35 @@
-function fetchBooks() {
+ function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
-  
+
+  fetch('https://anapioficeandfire.com/api/books')
+  .then(res => res.json())
+  .then(function (response){
+    //console.log(response)
+    renderBooks(response)
+  })
+
 }
+
+// async function fetchBooks() {
+//   // To pass the tests, don't forget to return your fetch!
+//   // const gameOfThrones = {}
+//   // fetch('https://anapioficeandfire.com/api/books')
+//   // .then(res => res.json())
+//   // .then(function(res){
+//   //  res = gameOfThrones
+//   //  renderBooks(gameOfThrones)
+//   // })
+
+//   //const url = 'https://anapioficeandfire.com/api/books'
+//   await fetch('https://anapioficeandfire.com/api/books')
+//   .then(res => res.json())
+//   .then(function (response){
+//     console.log(response)
+//     renderBooks(response)
+//   })
+
+// }
+
 
 function renderBooks(books) {
   const main = document.querySelector('main');
